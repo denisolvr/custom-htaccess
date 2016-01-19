@@ -1,0 +1,12 @@
+#author denisolvr
+#email denis.olvr@gmail.com
+
+#Block one or more IP address. Usual to badbots
+<Limit GET POST>
+order allow,deny
+deny from #IP_ADDRESS_1
+deny from #IP_ADDRESS_2
+allow from all
+</Limit>
+
+
