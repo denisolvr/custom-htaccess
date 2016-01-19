@@ -9,4 +9,12 @@ deny from #IP_ADDRESS_2
 allow from all
 </Limit>
 
+#Disable directory browsing
+Options All -Indexes
 
+#Redirect all traffic to maintenance.html file
+#RewriteEngine on
+#RewriteCond %{REQUEST_URI} !/maintenance.html$
+#RewriteCond %{REMOTE_ADDR} !^123\.123\.123\.123
+#RewriteRule $ /maintenance.html [R=302,L]
+#End redirect
