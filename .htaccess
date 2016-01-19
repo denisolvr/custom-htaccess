@@ -18,3 +18,15 @@ Options All -Indexes
 #RewriteCond %{REMOTE_ADDR} !^123\.123\.123\.123
 #RewriteRule $ /maintenance.html [R=302,L]
 #End redirect
+
+#Redirect to specific directory
+<IfModule mod_rewrite.c>
+    Options -MultiViews
+
+    RewriteEngine On
+    #directory	
+    RewriteBase /web
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [QSA,L]
+</IfModule>
+#End redirect
